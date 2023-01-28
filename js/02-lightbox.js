@@ -13,7 +13,7 @@ const listMarkup = galleryItems
 </a>`;
   })
   .join('');
-galleryListRefs.innerHTML = listMarkup;
+galleryListRefs.insertAdjacentHTML("beforeend", listMarkup);
 
 galleryListRefs.addEventListener('click', openModal);
 
