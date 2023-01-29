@@ -20,13 +20,18 @@ const listMarkup = galleryItems
   })
   .join('');
 galleryListRefs.insertAdjacentHTML("beforeend", listMarkup);
-galleryListRefs.addEventListener('click', openModal);
 
+
+
+
+galleryListRefs.addEventListener('click', openModal);
 function openModal(event) {
   event.preventDefault();
-  if (!event.target.classList.contains('gallery__image')) {
+  if (!event.target.nodeName === "IMG") {
     return;
   }
+
+
   const instance = basicLightbox.create(
     `<img src="${event.target.dataset.source}" width="800" height="600">`,
     {
@@ -45,3 +50,4 @@ function openModal(event) {
   }
   instance.show();
 }
+
